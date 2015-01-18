@@ -1,0 +1,24 @@
+{
+	"token": null,
+	"users": [
+		"jahed"
+	],
+	"repoFields": [
+		"name",
+		"description",
+		"homepage",
+		"html_url",
+		"updated_at",
+		"stargazers_count",
+		"language",
+		"languages"
+	],
+	"infoFields": [
+		"login",
+		"name",
+		"public_repos",
+		"followers",
+		"avatar_url",
+		"html_url"
+	]
+}
