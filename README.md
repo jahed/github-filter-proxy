@@ -1,18 +1,18 @@
 # GitHub Filter Proxy
 Server for accessing GitHub's API and filtering properties.
 
-# Requirements
+## Requirements
 - NodeJS
 - NPM
 
-# Installation
+## Installation
 Download the project and run the following:
 
 ```sh
 npm install
 ```
 
-# Usage
+## Usage
 ```sh
 /path_to_src_dir/main.js --config PATH_TO_CONFIG_FILE [--port PORT]
 ```
