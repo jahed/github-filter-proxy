@@ -46,10 +46,10 @@ function createUserRouter(config) {
 				return !repo.fork && !repo.private;
 			});
 
-			async.each(publicRepos, addRepoLanguages, function(err) {
+			async.each(publicRepos, addMoreRepoDetails, function(err) {
 				if(err) throw err;
 
-				var trimmedRepos = repos.map(function(repo) {				
+				var trimmedRepos = repos.map(function(repo) {
 					var trimmedRepo = {};
 					config.repoFields.forEach(function(field) {
 						trimmedRepo[field] = repo[field];
@@ -61,6 +61,16 @@ function createUserRouter(config) {
 			});
 		});
 	});
+
+	function addMoreRepoDetails(repo, cb) {
+		var detailAdders = [];
+
+		if(config.repoFields.indexOf['languages'] !== -1) {
+			detailAdders.push(addRepoLanguages);
+		}
+
+		async.applyEach(detailAdders, repo, cb);
+	}
 
 	function addRepoLanguages(repo, cb) {
 		var ghRepo = ghClient.repo(repo.full_name);

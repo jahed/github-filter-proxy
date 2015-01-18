@@ -22,6 +22,15 @@ See `./examples/example-config.json` for an example config.
 You can specify a GitHub API token via the config or by setting a
 `GITHUB_TOKEN` environment variable. The config takes precedence.
 
+### Getting more detail
+*This is work in progress*
+
+Most high level endpoints in GitHub's API doesn't get you all the details for a given object (like a repo or user). Instead there are seperate endpoints which need to be fetched separately. This server can do that automatically.
+
+For now, it can only fetch languages for a repo by specifying a `languages` field in the config. See the example-config.json.
+
+Right now, the extra fields retrieved from these endpoints cannot be filtered.
+
 ## License
 *Licensed under MIT.*
 
